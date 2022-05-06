@@ -7,20 +7,16 @@ library("parallel")
 library("readr")
 library("ROCR")
 
-here::i_am("src/R/gradis-neg.R")
+here::i_am("src/R/gradis-neg-ec.R")
 
 param.model_type <- "rf"
 
-# EXPfilename <- here::here("src/data/Expression.txt")
-# GENEfilename <- here::here("src/data/Genes.csv")
-# NETfilename <- here::here("src/data/Network.csv")
-
-EXPfilename <- here::here("src/data/Expression_SC.txt")
-GENEfilename <- here::here("src/data/Genes_SC.csv")
-NETfilename <- here::here("src/data/Network_SC.csv")
+EXPfilename <- here::here("src/data/Expression.txt")
+GENEfilename <- here::here("src/data/Genes.csv")
+NETfilename <- here::here("src/data/Network.csv")
 
 log_info("Loading data.  This may take some time...")
-T <- read_csv(EXPfilename, col_names = FALSE, show_col_types = FALSE)
+T <- read_table(EXPfilename, col_names = FALSE, show_col_types = FALSE)
 X <- array(T)
 EXPData <- read_csv(GENEfilename, col_names = FALSE, show_col_types = FALSE)
 NETData <- read_csv(NETfilename, col_names = FALSE, show_col_types = FALSE)
