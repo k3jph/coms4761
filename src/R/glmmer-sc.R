@@ -6,11 +6,11 @@ library("logger")
 library("readr")
 library("ROCR")
 
-here::i_am("src/R/glmmer.R")
+here::i_am("src/R/glmmer-sc.R")
 
 log_info("Loading data positive and negative data")
-genepos.dt <- data.table(read_csv(here::here("src/data/datapos.csv"), col_names = FALSE))
-geneneg.dt <- data.table(read_csv(here::here("src/data/dataneg.csv"), col_names = FALSE))
+genepos.dt <- data.table(read_csv(here::here("src/data/datapos_SC.csv"), col_names = FALSE))
+geneneg.dt <- data.table(read_csv(here::here("src/data/dataneg_SC.csv"), col_names = FALSE))
 
 log_info("Munging datasets")
 genepos.dt[, y := 1]
@@ -23,20 +23,20 @@ trainIndex <- createDataPartition(gene.dt$y, p = .8, list = FALSE, times = 1)
 gene.trn.dt <- gene.dt[trainIndex]
 gene.tst.dt <- gene.dt[-trainIndex]
 
-fitControl <- trainControl(method = "repeatedcv", allowParallel = TRUE, verboseIter = TRUE)
+fitControl <- trainControl(method = "cv", allowParallel = TRUE, verboseIter = TRUE)
 
 model1 <- glm(as.factor(y) ~ ., data = gene.trn.dt, family = binomial())
 
 log_info("Creating logit model")
-model.name.model1 <- "knn"
+model.name.model1 <- "glm"
 model1 <- train(as.factor(y) ~ ., data = gene.trn.dt, method = model.name.model1, trControl = fitControl)
 
 log_info("Creating randomforest model")
-model.name.model2 <- "snn"
+model.name.model2 <- "rf"
 model2 <- train(as.factor(y) ~ ., data = gene.trn.dt, method = model.name.model2, trControl = fitControl)
 
-log_info("Creating naive MLP model")
-model.name.model3 <- "rpart"
+log_info("Creating naive Bayes model")
+model.name.model3 <- "naive_bayes"
 model3 <- train(as.factor(y)  ~ ., data = gene.trn.dt, method = model.name.model3, trControl = fitControl)
 
 log_info("Testing models against holdout data")
@@ -77,7 +77,7 @@ p <- ggplot() +
     geom_line(data = df, aes(x = x, y = y), linetype = "dotted") +
     labs(color = "Model") + theme(legend.position="bottom")
 print(p)
-ggsave(here::here("tmp/auc-perf.pdf"), p, width = 30, height = 30, units = "cm")
+ggsave(here::here("tmp/auc-perf-ec.pdf"), p, width = 30, height = 30, units = "cm")
 
 confusionMatrix(data = as.factor(fitted.model1[, 2] > 0.5), reference = as.factor(gene.tst.dt[, y]), positive = "TRUE")
 confusionMatrix(data = as.factor(fitted.model2[, 2] > 0.5), reference = as.factor(gene.tst.dt[, y]), positive = "TRUE")
