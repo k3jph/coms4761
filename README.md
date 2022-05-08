@@ -42,6 +42,39 @@ where network_id = 3 for *E. coli* and network_id = 4 for *S. cerevisiae*.
 
 ### GNN
 
+    bash install.sh
+
+to install the required software and libraries. [Node2vec](https://github.com/aditya-grover/node2vec) and [DGCNN](https://github.com/muhanzhang/pytorch_DGCNN) are included in software folder. 
+
+Unzip DREAM5 data
+
+    cd data/dream
+
+    unzip dreamdata.zip
+
+    cd ../../
+
+(Optional): Preprocessing DREAM5 data
+
+    cd preprocessing
+
+    python Preprocessing_DREAM5.py 3
+
+    python Preprocessing_DREAM5.py 4
+
+In this program, for simple, data3 means E.coli dataset, data4 means S. cerevisae dataset
+Train S. cerevisae and test on E. coli with default parameters, Type: 
+
+    python Main_inductive_ensemble.py  --traindata-name data4 --testdata-name data3
+
+Train S. cerevisae and test on E. coli with hop 1 and embedding, Type:
+
+    python Main_inductive_ensemble.py  --traindata-name data4 --testdata-name data3 --hop 1 --use-embedding
+
+Train E. coli and test on S. cerevisae with hop 1 and embedding, Type:
+
+    python Main_inductive_ensemble.py  --traindata-name data3 --testdata-name data4 --hop 1 --use-embedding
+
 ### R
 
 To test three different methods for differentiating 
@@ -77,4 +110,5 @@ Apple silicon.
 ## For more information
 
 * "[Supervised learning of gene-regulatory networks based on graph distance profiles of transcriptomics data](https://www.nature.com/articles/s41540-020-0140-1)"
+* "[Inductive inference of gene regulatory network using supervised and semi-supervised graph neural networks](https://www.sciencedirect.com/science/article/pii/S200103702030444X)"
 * James P. Howard, II <<jh@jameshoward.us>>
