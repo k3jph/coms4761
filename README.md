@@ -62,18 +62,15 @@ Unzip DREAM5 data
 
     python Preprocessing_DREAM5.py 4
 
-In this program, for simple, data3 means E.coli dataset, data4 means S. cerevisae dataset
-Train S. cerevisae and test on E. coli with default parameters, Type: 
+In this program, data3 means E.coli dataset, data4 means S. cerevisae dataset
 
-    python Main_inductive_ensemble.py  --traindata-name data4 --testdata-name data3
+Train and test E. coli with hop 1 and embedding, Type:
 
-Train S. cerevisae and test on E. coli with hop 1 and embedding, Type:
+    python Main_inductive_ensemble.py  --traindata-name data3 --testdata-name data3 --hop 1 --use-embedding
+    
+Train and test S. cerevisae with hop 1 and embedding, Type:
 
-    python Main_inductive_ensemble.py  --traindata-name data4 --testdata-name data3 --hop 1 --use-embedding
-
-Train E. coli and test on S. cerevisae with hop 1 and embedding, Type:
-
-    python Main_inductive_ensemble.py  --traindata-name data3 --testdata-name data4 --hop 1 --use-embedding
+    python Main_inductive_ensemble.py  --traindata-name data4 --testdata-name data4 --hop 1 --use-embedding
 
 ### R
 
