@@ -1,29 +1,19 @@
 
 # Computational Genomics Final Project
 
-
-<div align="center">
-
-[![PyPI - Version](https://img.shields.io/pypi/v/coms4761.svg)](https://pypi.python.org/pypi/coms4761)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/coms4761.svg)](https://pypi.python.org/pypi/coms4761)
-[![Tests](https://github.com/howardjp/coms4761/workflows/tests/badge.svg)](https://github.com/howardjp/coms4761/actions?workflow=tests)
-[![Codecov](https://codecov.io/gh/howardjp/coms4761/branch/main/graph/badge.svg)](https://codecov.io/gh/howardjp/coms4761)
-[![Read the Docs](https://readthedocs.org/projects/coms4761/badge/)](https://coms4761.readthedocs.io/)
-[![PyPI - License](https://img.shields.io/pypi/l/coms4761.svg)](https://pypi.python.org/pypi/coms4761)
-
-[![Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-
-
-</div>
-
-
- Final project for COMS 4761
-
+This repository contains a final project for COMS 4761 -- Computational
+Genomics at Columbia University in the City of New York.
 
 * GitHub repo: <https://github.com/k3jph/coms4761.git>
 * Free software: MIT
 
+Our project replicates aspects of the
+[GRADIS](https://github.com/MonaRazaghi/GRADIS) for the supervised
+learning of gene regulatory networks based on graph distance profile
+of transcriptomics data.  For this, we have replicated the basic
+analysis in R, and used methods other than SVM.  In addition, to
+simplify some of the processing, we have exported the data from
+Excel to CSVs.
 
 ## Features
 
@@ -48,11 +38,44 @@ python data_processing.py <network_id>
 ```
 where network_id = 3 for *E. coli* and network_id = 4 for *S. cerevisiae*.
 
-**Implementation**
+## Usage
 
-## Credits
+### GNN
 
-This package was created with [Cookiecutter][cookiecutter] and the [fedejaure/cookiecutter-modern-pypackage][cookiecutter-modern-pypackage] project template.
+### R
 
-[cookiecutter]: https://github.com/cookiecutter/cookiecutter
-[cookiecutter-modern-pypackage]: https://github.com/fedejaure/cookiecutter-modern-pypackage
+To test three different methods for differentiating 
+between positive and negative, for *E. coli* use:
+
+    Rscript src/R/glmmer-ec.R
+
+For *S. cerevisiae*, use:
+
+    Rscript src/R/glmmer-sc.R
+
+Both scripts include a vanilla GLM, random forest, and 
+naïve Bayes as classifiers.  The code is built on top 
+of the R library [caret](https://topepo.github.io/caret/),
+so switching classifiers is trivial.
+
+To identify and train negatives over the *E. coli* data,
+use:
+
+    Rscript src/R/gradis-neg-ec.R
+
+To identify and train negatives over the *S. cerevisiae* data,
+use:
+
+    Rscript src/R/gradis-neg-sc.R
+
+Both scripts use random forest by default, but also
+use caret, so switching is, again trivial.  However,
+even rapidly training models will take multiple hours.
+Using random forest requires up to 24 hours on new 
+Apple silicon.
+
+## For more information
+
+* "[Supervised learning of gene-regulatory networks based on graph distance profiles of transcriptomics data
+](https://www.nature.com/articles/s41540-020-0140-1)"
+* James P. Howard, II <<jh@jameshoward.us>>
