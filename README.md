@@ -76,6 +76,5 @@ Apple silicon.
 
 ## For more information
 
-* "[Supervised learning of gene-regulatory networks based on graph distance profiles of transcriptomics data
-](https://www.nature.com/articles/s41540-020-0140-1)"
+* "[Supervised learning of gene-regulatory networks based on graph distance profiles of transcriptomics data](https://www.nature.com/articles/s41540-020-0140-1)"
 * James P. Howard, II <<jh@jameshoward.us>>
