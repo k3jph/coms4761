@@ -154,7 +154,7 @@ for(i in seq.int(model_count)) {
 
 Labels <- matrix(0, length(rand_num_Neg),1)
 
-fitControl <- trainControl(method = "cv", allowParallel = TRUE, verboseIter = TRUE)
+fitControl <- trainControl(method = "cv", allowParallel = TRUE, verboseIter = FALSE)
 for(i in seq_along(Start_train_neg)) {
   log_info('Model number ', i, ' for predicting negative samples.')
 
@@ -226,3 +226,4 @@ p <- ggplot() +
 print(p)
 ggsave(here::here("tmp/auc-perf-gradis-neg-sc-rf.pdf"), p, width = 30, height = 30, units = "cm")
 
+save.image("tmp/glmmer-sc.Rdata")

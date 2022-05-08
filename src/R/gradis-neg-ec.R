@@ -226,3 +226,4 @@ p <- ggplot() +
 print(p)
 ggsave(here::here("tmp/auc-perf-gradis-neg-sc-rf.pdf"), p, width = 30, height = 30, units = "cm")
 
+save.image("tmp/gradis-neg-ec.Rdata")

@@ -77,8 +77,7 @@ p <- ggplot() +
     geom_line(data = df, aes(x = x, y = y), linetype = "dotted") +
     labs(color = "Model") + theme(legend.position="bottom")
 print(p)
-ggsave(here::here("tmp/auc-perf-ec.pdf"), p, width = 30, height = 30, units = "cm")
+ggsave(here::here("tmp/auc-perf-sc.pdf"), p, width = 30, height = 30, units = "cm")
 
-confusionMatrix(data = as.factor(fitted.model1[, 2] > 0.5), reference = as.factor(gene.tst.dt[, y]), positive = "TRUE")
-confusionMatrix(data = as.factor(fitted.model2[, 2] > 0.5), reference = as.factor(gene.tst.dt[, y]), positive = "TRUE")
-confusionMatrix(data = as.factor(fitted.model3[, 2] > 0.5), reference = as.factor(gene.tst.dt[, y]), positive = "TRUE")
+log_info("Saving data image")
+save.image("tmp/glmmer-sc.Rdata")

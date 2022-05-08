@@ -79,6 +79,5 @@ p <- ggplot() +
 print(p)
 ggsave(here::here("tmp/auc-perf-ec.pdf"), p, width = 30, height = 30, units = "cm")
 
-confusionMatrix(data = as.factor(fitted.model1[, 2] > 0.5), reference = as.factor(gene.tst.dt[, y]), positive = "TRUE")
-confusionMatrix(data = as.factor(fitted.model2[, 2] > 0.5), reference = as.factor(gene.tst.dt[, y]), positive = "TRUE")
-confusionMatrix(data = as.factor(fitted.model3[, 2] > 0.5), reference = as.factor(gene.tst.dt[, y]), positive = "TRUE")
+log_info("Saving data image")
+save.image("tmp/glmmer-ec.Rdata")
