@@ -1,0 +1,12 @@
+Both agents right: 5797
+Both agents wrong: 1610
+Corrected by Ensembl: 1148
+Not corrected by Ensembl: 463
+Ensemble:Accuracy tp fn tn fp AUC
+0.7365946632782719	2168	1767	3629	306	0.7705181563817369
+
+Agent0:Accuracy tp fn tn fp AUC
+0.6823379923761118	1895	2040	3475	460	0.26764526477753975
+
+Agent1:Accuracy tp fn tn fp AUC
+0.7038119440914866	2149	1786	3390	545	0.22382321362548013

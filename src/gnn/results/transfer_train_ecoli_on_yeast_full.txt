@@ -1,0 +1,485 @@
+python3 Main_inductive_ensemble.py  --traindata-name data3 --testdata-name data4
+ --hop 1 --use-embedding
+====== begin of gnn configuration ======
+| msg_average = 0
+======   end of gnn configuration ======
+Namespace(traindata_name='data3', traindata_name2=None, testdata_name='data4', max_train_num=100000, no_cuda=False, seed=43, training_ratio=1.0, neighbors_ratio=1.0, nonezerolabel_flag=False, nonzerolabel_ratio=1.0, zerolabel_ratio=0.0, feature_num=4, embedding_dim=1, pearson_net=0.8, mutual_net=3, hop=1, max_nodes_per_hop=None, use_embedding=True, use_attribute=True, cuda=False)
+sampling negative links for train and test
+sampling negative links for train and test
+Walk iteration:
+1/10
+2/10
+3/10
+4/10
+5/10
+6/10
+7/10
+8/10
+9/10
+10/10
+Walk iteration:
+1/10
+2/10
+3/10
+4/10
+5/10
+6/10
+7/10
+8/10
+9/10
+10/10
+Walk iteration:
+1/10
+2/10
+3/10
+4/10
+5/10
+6/10
+7/10
+8/10
+9/10
+10/10
+/Users/eigenott/Desktop/GRGNN/software/node2vec/src/node2vec.py:87: RuntimeWarning: invalid value encountered in double_scalars
+  normalized_probs =  [float(u_prob)/norm_const for u_prob in unnormalized_probs]
+/Users/eigenott/Desktop/GRGNN/software/node2vec/src/node2vec.py:72: RuntimeWarning: invalid value encountered in double_scalars
+  normalized_probs =  [float(u_prob)/norm_const for u_prob in unnormalized_probs]
+Walk iteration:
+1/10
+2/10
+3/10
+4/10
+5/10
+6/10
+7/10
+8/10
+9/10
+10/10
+Extract enclosed subgraph...
+2055it [00:05, 342.91it/s]
+2055it [00:07, 290.82it/s]
+3935it [00:25, 153.69it/s]
+3935it [00:21, 184.58it/s]
+{'value': 14}
+Extract enclosed subgraph...
+2055it [00:06, 326.33it/s]
+2055it [00:04, 476.85it/s]
+3935it [00:26, 149.13it/s]
+3935it [00:23, 168.17it/s]
+{'value': 6}
+# train: 4110, # test: 7870
+k used in SortPooling is: 10
+Initializing DGCNN
+loss: 0.67296 acc: 0.68000: 100%|████████████| 82/82 [00:01<00:00, 77.30batch/s]
+average training of epoch 0: loss 0.68585 acc 0.57561 auc 0.61943
+loss: 0.69102 acc: 0.50000: 100%|█████████| 158/158 [00:01<00:00, 131.14batch/s]
+average test of epoch 0: loss 0.68175 acc 0.63469 auc 0.69711
+loss: 0.61631 acc: 0.70000: 100%|████████████| 82/82 [00:00<00:00, 82.65batch/s]
+average training of epoch 1: loss 0.65251 acc 0.70195 auc 0.76201
+loss: 0.67974 acc: 0.60000: 100%|█████████| 158/158 [00:01<00:00, 132.85batch/s]
+average test of epoch 1: loss 0.64841 acc 0.64079 auc 0.70470
+loss: 0.53199 acc: 0.78000: 100%|████████████| 82/82 [00:01<00:00, 80.63batch/s]
+average training of epoch 2: loss 0.58518 acc 0.73244 auc 0.80150
+loss: 0.56092 acc: 0.80000: 100%|█████████| 158/158 [00:01<00:00, 133.03batch/s]
+average test of epoch 2: loss 0.60813 acc 0.65527 auc 0.71377
+loss: 0.58819 acc: 0.66000: 100%|████████████| 82/82 [00:01<00:00, 81.47batch/s]
+average training of epoch 3: loss 0.53137 acc 0.75146 auc 0.81831
+loss: 0.51645 acc: 0.85000: 100%|█████████| 158/158 [00:01<00:00, 131.73batch/s]
+average test of epoch 3: loss 0.58929 acc 0.66938 auc 0.71873
+loss: 0.52568 acc: 0.76000: 100%|████████████| 82/82 [00:01<00:00, 78.63batch/s]
+average training of epoch 4: loss 0.51234 acc 0.75049 auc 0.82367
+loss: 0.46389 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 122.64batch/s]
+average test of epoch 4: loss 0.59110 acc 0.67459 auc 0.72025
+loss: 0.52701 acc: 0.70000: 100%|████████████| 82/82 [00:01<00:00, 79.96batch/s]
+average training of epoch 5: loss 0.49583 acc 0.76171 auc 0.83389
+loss: 0.42600 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 133.23batch/s]
+average test of epoch 5: loss 0.59347 acc 0.67878 auc 0.72123
+loss: 0.45193 acc: 0.80000: 100%|████████████| 82/82 [00:00<00:00, 82.21batch/s]
+average training of epoch 6: loss 0.49091 acc 0.76171 auc 0.83721
+loss: 0.41984 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 132.90batch/s]
+average test of epoch 6: loss 0.59732 acc 0.67929 auc 0.72169
+loss: 0.44482 acc: 0.76000: 100%|████████████| 82/82 [00:01<00:00, 81.86batch/s]
+average training of epoch 7: loss 0.48447 acc 0.76659 auc 0.84048
+loss: 0.41165 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 131.91batch/s]
+average test of epoch 7: loss 0.59869 acc 0.67942 auc 0.72331
+loss: 0.44931 acc: 0.80000: 100%|████████████| 82/82 [00:01<00:00, 81.78batch/s]
+average training of epoch 8: loss 0.48658 acc 0.76829 auc 0.83960
+loss: 0.42296 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 131.98batch/s]
+average test of epoch 8: loss 0.59258 acc 0.67891 auc 0.72517
+loss: 0.36765 acc: 0.86000: 100%|████████████| 82/82 [00:01<00:00, 79.64batch/s]
+average training of epoch 9: loss 0.47790 acc 0.76707 auc 0.84717
+loss: 0.41344 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 132.87batch/s]
+average test of epoch 9: loss 0.59885 acc 0.67764 auc 0.72454
+loss: 0.51893 acc: 0.76000: 100%|████████████| 82/82 [00:01<00:00, 80.98batch/s]
+average training of epoch 10: loss 0.47601 acc 0.77268 auc 0.84713
+loss: 0.47343 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 131.40batch/s]
+average test of epoch 10: loss 0.59088 acc 0.67205 auc 0.72439
+loss: 0.56080 acc: 0.70000: 100%|████████████| 82/82 [00:01<00:00, 79.16batch/s]
+average training of epoch 11: loss 0.47370 acc 0.77122 auc 0.84843
+loss: 0.43382 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 132.80batch/s]
+average test of epoch 11: loss 0.60052 acc 0.67687 auc 0.72361
+loss: 0.49516 acc: 0.72000: 100%|████████████| 82/82 [00:01<00:00, 79.51batch/s]
+average training of epoch 12: loss 0.47126 acc 0.77488 auc 0.85016
+loss: 0.45682 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 132.25batch/s]
+average test of epoch 12: loss 0.59419 acc 0.67294 auc 0.72526
+loss: 0.39928 acc: 0.86000: 100%|████████████| 82/82 [00:01<00:00, 80.17batch/s]
+average training of epoch 13: loss 0.46585 acc 0.78049 auc 0.85310
+loss: 0.41893 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 129.39batch/s]
+average test of epoch 13: loss 0.60101 acc 0.67789 auc 0.72549
+loss: 0.40783 acc: 0.78000: 100%|████████████| 82/82 [00:01<00:00, 77.89batch/s]
+average training of epoch 14: loss 0.46660 acc 0.77780 auc 0.85347
+loss: 0.42699 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 132.31batch/s]
+average test of epoch 14: loss 0.59937 acc 0.67789 auc 0.72560
+loss: 0.47551 acc: 0.76000: 100%|████████████| 82/82 [00:01<00:00, 80.37batch/s]
+average training of epoch 15: loss 0.46773 acc 0.77634 auc 0.85151
+loss: 0.41239 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 131.35batch/s]
+average test of epoch 15: loss 0.60550 acc 0.67840 auc 0.72450
+loss: 0.48080 acc: 0.80000: 100%|████████████| 82/82 [00:01<00:00, 81.29batch/s]
+average training of epoch 16: loss 0.46525 acc 0.78073 auc 0.85445
+loss: 0.40949 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 131.86batch/s]
+average test of epoch 16: loss 0.60313 acc 0.67916 auc 0.72576
+loss: 0.42977 acc: 0.80000: 100%|████████████| 82/82 [00:01<00:00, 81.14batch/s]
+average training of epoch 17: loss 0.45946 acc 0.78049 auc 0.85742
+loss: 0.49002 acc: 0.85000: 100%|█████████| 158/158 [00:01<00:00, 130.80batch/s]
+average test of epoch 17: loss 0.59229 acc 0.67217 auc 0.72567
+loss: 0.32152 acc: 0.86000: 100%|████████████| 82/82 [00:01<00:00, 75.79batch/s]
+average training of epoch 18: loss 0.46368 acc 0.78537 auc 0.85387
+loss: 0.45721 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 132.64batch/s]
+average test of epoch 18: loss 0.59352 acc 0.67560 auc 0.72709
+loss: 0.41245 acc: 0.78000: 100%|████████████| 82/82 [00:01<00:00, 71.39batch/s]
+average training of epoch 19: loss 0.45558 acc 0.78415 auc 0.86050
+loss: 0.44529 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 132.33batch/s]
+average test of epoch 19: loss 0.60007 acc 0.67560 auc 0.72604
+loss: 0.39947 acc: 0.84000: 100%|████████████| 82/82 [00:01<00:00, 80.35batch/s]
+average training of epoch 20: loss 0.45681 acc 0.78171 auc 0.85906
+loss: 0.43844 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 131.91batch/s]
+average test of epoch 20: loss 0.60185 acc 0.67548 auc 0.72636
+loss: 0.42745 acc: 0.80000: 100%|████████████| 82/82 [00:01<00:00, 80.00batch/s]
+average training of epoch 21: loss 0.45515 acc 0.78780 auc 0.86048
+loss: 0.41756 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 133.35batch/s]
+average test of epoch 21: loss 0.60635 acc 0.67878 auc 0.72640
+loss: 0.45762 acc: 0.82000: 100%|████████████| 82/82 [00:01<00:00, 80.69batch/s]
+average training of epoch 22: loss 0.45295 acc 0.78756 auc 0.86112
+loss: 0.45518 acc: 0.85000: 100%|█████████| 158/158 [00:01<00:00, 132.24batch/s]
+average test of epoch 22: loss 0.59751 acc 0.67637 auc 0.72728
+loss: 0.53498 acc: 0.76000: 100%|████████████| 82/82 [00:01<00:00, 81.64batch/s]
+average training of epoch 23: loss 0.45587 acc 0.78463 auc 0.85937
+loss: 0.44523 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 131.57batch/s]
+average test of epoch 23: loss 0.60076 acc 0.67573 auc 0.72715
+loss: 0.41357 acc: 0.78000: 100%|████████████| 82/82 [00:01<00:00, 81.38batch/s]
+average training of epoch 24: loss 0.45078 acc 0.79244 auc 0.86175
+loss: 0.42292 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 129.62batch/s]
+average test of epoch 24: loss 0.60698 acc 0.67649 auc 0.72704
+loss: 0.56230 acc: 0.68000: 100%|████████████| 82/82 [00:01<00:00, 81.19batch/s]
+average training of epoch 25: loss 0.45485 acc 0.78805 auc 0.85995
+loss: 0.41878 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 130.00batch/s]
+average test of epoch 25: loss 0.60316 acc 0.67954 auc 0.72845
+loss: 0.48978 acc: 0.72000: 100%|████████████| 82/82 [00:01<00:00, 80.39batch/s]
+average training of epoch 26: loss 0.45794 acc 0.78317 auc 0.85766
+loss: 0.48458 acc: 0.85000: 100%|█████████| 158/158 [00:01<00:00, 130.89batch/s]
+average test of epoch 26: loss 0.59182 acc 0.67624 auc 0.72778
+loss: 0.42560 acc: 0.84000: 100%|████████████| 82/82 [00:01<00:00, 79.22batch/s]
+average training of epoch 27: loss 0.45391 acc 0.78390 auc 0.86091
+loss: 0.45096 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 130.59batch/s]
+average test of epoch 27: loss 0.59959 acc 0.67649 auc 0.72765
+loss: 0.53723 acc: 0.70000: 100%|████████████| 82/82 [00:01<00:00, 78.55batch/s]
+average training of epoch 28: loss 0.45016 acc 0.79122 auc 0.86336
+loss: 0.44704 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 130.14batch/s]
+average test of epoch 28: loss 0.59667 acc 0.67738 auc 0.73002
+loss: 0.49092 acc: 0.76000: 100%|████████████| 82/82 [00:01<00:00, 73.10batch/s]
+average training of epoch 29: loss 0.45017 acc 0.78537 auc 0.86355
+loss: 0.44772 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 132.82batch/s]
+average test of epoch 29: loss 0.59858 acc 0.67726 auc 0.72912
+loss: 0.44964 acc: 0.78000: 100%|████████████| 82/82 [00:01<00:00, 81.92batch/s]
+average training of epoch 30: loss 0.44896 acc 0.79000 auc 0.86329
+loss: 0.41093 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 132.21batch/s]
+average test of epoch 30: loss 0.60728 acc 0.68132 auc 0.72986
+loss: 0.42281 acc: 0.86000: 100%|████████████| 82/82 [00:01<00:00, 75.85batch/s]
+average training of epoch 31: loss 0.45013 acc 0.79146 auc 0.86216
+loss: 0.47148 acc: 0.85000: 100%|█████████| 158/158 [00:01<00:00, 125.38batch/s]
+average test of epoch 31: loss 0.59549 acc 0.67776 auc 0.72931
+loss: 0.47269 acc: 0.80000: 100%|████████████| 82/82 [00:01<00:00, 80.44batch/s]
+average training of epoch 32: loss 0.45087 acc 0.78683 auc 0.86267
+loss: 0.46363 acc: 0.85000: 100%|█████████| 158/158 [00:01<00:00, 132.52batch/s]
+average test of epoch 32: loss 0.59263 acc 0.67789 auc 0.73006
+loss: 0.47676 acc: 0.72000: 100%|████████████| 82/82 [00:01<00:00, 81.38batch/s]
+average training of epoch 33: loss 0.44922 acc 0.78976 auc 0.86485
+loss: 0.42480 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 132.51batch/s]
+average test of epoch 33: loss 0.60541 acc 0.68005 auc 0.72958
+loss: 0.62238 acc: 0.72000: 100%|████████████| 82/82 [00:01<00:00, 79.38batch/s]
+average training of epoch 34: loss 0.44858 acc 0.78707 auc 0.86456
+loss: 0.43370 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 133.44batch/s]
+average test of epoch 34: loss 0.60088 acc 0.67891 auc 0.73055
+loss: 0.43998 acc: 0.78000: 100%|████████████| 82/82 [00:01<00:00, 81.47batch/s]
+average training of epoch 35: loss 0.44675 acc 0.79122 auc 0.86475
+loss: 0.45815 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 132.19batch/s]
+average test of epoch 35: loss 0.59348 acc 0.67751 auc 0.73101
+loss: 0.40717 acc: 0.78000: 100%|████████████| 82/82 [00:01<00:00, 81.95batch/s]
+average training of epoch 36: loss 0.44440 acc 0.79049 auc 0.86647
+loss: 0.45014 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 132.34batch/s]
+average test of epoch 36: loss 0.60091 acc 0.67713 auc 0.72903
+loss: 0.52482 acc: 0.66000: 100%|████████████| 82/82 [00:01<00:00, 81.08batch/s]
+average training of epoch 37: loss 0.44682 acc 0.78463 auc 0.86500
+loss: 0.50170 acc: 0.85000: 100%|█████████| 158/158 [00:01<00:00, 131.69batch/s]
+average test of epoch 37: loss 0.58790 acc 0.67687 auc 0.73063
+loss: 0.38148 acc: 0.84000: 100%|████████████| 82/82 [00:01<00:00, 80.52batch/s]
+average training of epoch 38: loss 0.44458 acc 0.79049 auc 0.86754
+loss: 0.43059 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 130.50batch/s]
+average test of epoch 38: loss 0.60282 acc 0.68043 auc 0.73045
+loss: 0.54591 acc: 0.72000: 100%|████████████| 82/82 [00:01<00:00, 81.40batch/s]
+average training of epoch 39: loss 0.44251 acc 0.79146 auc 0.86752
+loss: 0.46116 acc: 0.85000: 100%|█████████| 158/158 [00:01<00:00, 132.94batch/s]
+average test of epoch 39: loss 0.59604 acc 0.67751 auc 0.73094
+loss: 0.54493 acc: 0.78000: 100%|████████████| 82/82 [00:01<00:00, 80.19batch/s]
+average training of epoch 40: loss 0.44289 acc 0.79098 auc 0.86833
+loss: 0.49990 acc: 0.85000: 100%|█████████| 158/158 [00:01<00:00, 131.41batch/s]
+average test of epoch 40: loss 0.59322 acc 0.67865 auc 0.73058
+loss: 0.50909 acc: 0.66000: 100%|████████████| 82/82 [00:01<00:00, 79.69batch/s]
+average training of epoch 41: loss 0.44089 acc 0.79244 auc 0.86928
+loss: 0.45978 acc: 0.85000: 100%|█████████| 158/158 [00:01<00:00, 131.29batch/s]
+average test of epoch 41: loss 0.59439 acc 0.67903 auc 0.73284
+loss: 0.45009 acc: 0.84000: 100%|████████████| 82/82 [00:01<00:00, 79.18batch/s]
+average training of epoch 42: loss 0.44135 acc 0.79439 auc 0.86902
+loss: 0.38513 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 131.92batch/s]
+average test of epoch 42: loss 0.62161 acc 0.68424 auc 0.73007
+loss: 0.54417 acc: 0.74000: 100%|████████████| 82/82 [00:01<00:00, 80.65batch/s]
+average training of epoch 43: loss 0.44244 acc 0.79732 auc 0.86750
+loss: 0.43970 acc: 0.85000: 100%|█████████| 158/158 [00:01<00:00, 132.89batch/s]
+average test of epoch 43: loss 0.60839 acc 0.67891 auc 0.72980
+loss: 0.47357 acc: 0.76000: 100%|████████████| 82/82 [00:01<00:00, 79.32batch/s]
+average training of epoch 44: loss 0.43835 acc 0.79415 auc 0.87062
+loss: 0.44939 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 132.23batch/s]
+average test of epoch 44: loss 0.59980 acc 0.67992 auc 0.73127
+loss: 0.49659 acc: 0.72000: 100%|████████████| 82/82 [00:01<00:00, 81.10batch/s]
+average training of epoch 45: loss 0.43719 acc 0.79244 auc 0.87226
+loss: 0.47356 acc: 0.85000: 100%|█████████| 158/158 [00:01<00:00, 132.65batch/s]
+average test of epoch 45: loss 0.59905 acc 0.67789 auc 0.73051
+loss: 0.36402 acc: 0.82000: 100%|████████████| 82/82 [00:01<00:00, 80.85batch/s]
+average training of epoch 46: loss 0.44005 acc 0.79146 auc 0.86989
+loss: 0.43290 acc: 0.90000: 100%|█████████| 158/158 [00:01<00:00, 131.54batch/s]
+average test of epoch 46: loss 0.60366 acc 0.68158 auc 0.73187
+loss: 0.54845 acc: 0.72000: 100%|████████████| 82/82 [00:01<00:00, 81.58batch/s]
+average training of epoch 47: loss 0.43928 acc 0.79195 auc 0.87026
+loss: 0.49639 acc: 0.85000: 100%|█████████| 158/158 [00:01<00:00, 131.37batch/s]
+average test of epoch 47: loss 0.59478 acc 0.67751 auc 0.73093
+loss: 0.46115 acc: 0.78000: 100%|████████████| 82/82 [00:00<00:00, 82.36batch/s]
+average training of epoch 48: loss 0.43958 acc 0.79463 auc 0.86968
+loss: 0.42831 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 132.74batch/s]
+average test of epoch 48: loss 0.60646 acc 0.68310 auc 0.73134
+loss: 0.45835 acc: 0.80000: 100%|████████████| 82/82 [00:01<00:00, 80.81batch/s]
+average training of epoch 49: loss 0.43649 acc 0.79415 auc 0.87232
+loss: 0.43473 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 133.61batch/s]
+average test of epoch 49: loss 0.60219 acc 0.68234 auc 0.73235
+k used in SortPooling is: 10
+Initializing DGCNN
+loss: 0.65872 acc: 0.66000: 100%|████████████| 82/82 [00:00<00:00, 92.84batch/s]
+average training of epoch 0: loss 0.67243 acc 0.56854 auc 0.74206
+loss: 0.69355 acc: 0.80000: 100%|█████████| 158/158 [00:01<00:00, 136.67batch/s]
+average test of epoch 0: loss 0.65790 acc 0.67522 auc 0.75590
+loss: 0.59493 acc: 0.68000: 100%|████████████| 82/82 [00:00<00:00, 91.96batch/s]
+average training of epoch 1: loss 0.60642 acc 0.73439 auc 0.83904
+loss: 0.63114 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 132.06batch/s]
+average test of epoch 1: loss 0.59506 acc 0.69898 auc 0.76141
+loss: 0.47583 acc: 0.78000: 100%|████████████| 82/82 [00:00<00:00, 90.22batch/s]
+average training of epoch 2: loss 0.51897 acc 0.78659 auc 0.84934
+loss: 0.51200 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 132.58batch/s]
+average test of epoch 2: loss 0.54474 acc 0.69759 auc 0.75977
+loss: 0.56215 acc: 0.68000: 100%|████████████| 82/82 [00:00<00:00, 92.15batch/s]
+average training of epoch 3: loss 0.45796 acc 0.79488 auc 0.84954
+loss: 0.41311 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 134.70batch/s]
+average test of epoch 3: loss 0.52818 acc 0.70025 auc 0.76239
+loss: 0.60609 acc: 0.72000: 100%|████████████| 82/82 [00:00<00:00, 91.13batch/s]
+average training of epoch 4: loss 0.42996 acc 0.80195 auc 0.86823
+loss: 0.30372 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 132.87batch/s]
+average test of epoch 4: loss 0.53606 acc 0.71321 auc 0.76275
+loss: 0.45719 acc: 0.74000: 100%|████████████| 82/82 [00:00<00:00, 91.27batch/s]
+average training of epoch 5: loss 0.42539 acc 0.80415 auc 0.86744
+loss: 0.29288 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 135.73batch/s]
+average test of epoch 5: loss 0.54344 acc 0.71715 auc 0.76289
+loss: 0.41529 acc: 0.76000: 100%|████████████| 82/82 [00:00<00:00, 88.26batch/s]
+average training of epoch 6: loss 0.41617 acc 0.80585 auc 0.87506
+loss: 0.28218 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 133.73batch/s]
+average test of epoch 6: loss 0.54728 acc 0.71906 auc 0.76354
+loss: 0.43772 acc: 0.78000: 100%|████████████| 82/82 [00:00<00:00, 91.37batch/s]
+average training of epoch 7: loss 0.41790 acc 0.80634 auc 0.87301
+loss: 0.26870 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 135.24batch/s]
+average test of epoch 7: loss 0.54684 acc 0.71970 auc 0.76353
+loss: 0.40279 acc: 0.82000: 100%|████████████| 82/82 [00:00<00:00, 91.21batch/s]
+average training of epoch 8: loss 0.41693 acc 0.81024 auc 0.87359
+loss: 0.28594 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 129.36batch/s]
+average test of epoch 8: loss 0.54971 acc 0.71906 auc 0.76336
+loss: 0.49895 acc: 0.76000: 100%|████████████| 82/82 [00:00<00:00, 82.68batch/s]
+average training of epoch 9: loss 0.41432 acc 0.81073 auc 0.87557
+loss: 0.24504 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 133.67batch/s]
+average test of epoch 9: loss 0.55821 acc 0.72084 auc 0.76383
+loss: 0.41787 acc: 0.76000: 100%|████████████| 82/82 [00:00<00:00, 91.38batch/s]
+average training of epoch 10: loss 0.41442 acc 0.81195 auc 0.87390
+loss: 0.25922 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 136.75batch/s]
+average test of epoch 10: loss 0.55238 acc 0.72160 auc 0.76380
+loss: 0.51988 acc: 0.78000: 100%|████████████| 82/82 [00:00<00:00, 89.92batch/s]
+average training of epoch 11: loss 0.41052 acc 0.81146 auc 0.87785
+loss: 0.27006 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 135.18batch/s]
+average test of epoch 11: loss 0.55788 acc 0.72109 auc 0.76353
+loss: 0.43566 acc: 0.82000: 100%|████████████| 82/82 [00:00<00:00, 89.83batch/s]
+average training of epoch 12: loss 0.41201 acc 0.81098 auc 0.87787
+loss: 0.28663 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 136.14batch/s]
+average test of epoch 12: loss 0.55276 acc 0.71766 auc 0.76350
+loss: 0.58055 acc: 0.76000: 100%|████████████| 82/82 [00:00<00:00, 90.11batch/s]
+average training of epoch 13: loss 0.41279 acc 0.81220 auc 0.87538
+loss: 0.24850 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 132.94batch/s]
+average test of epoch 13: loss 0.56067 acc 0.72122 auc 0.76395
+loss: 0.36419 acc: 0.84000: 100%|████████████| 82/82 [00:00<00:00, 89.17batch/s]
+average training of epoch 14: loss 0.40767 acc 0.81488 auc 0.87965
+loss: 0.26657 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 134.83batch/s]
+average test of epoch 14: loss 0.55636 acc 0.71804 auc 0.76394
+loss: 0.39597 acc: 0.84000: 100%|████████████| 82/82 [00:00<00:00, 91.22batch/s]
+average training of epoch 15: loss 0.41252 acc 0.81000 auc 0.87590
+loss: 0.30812 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 135.91batch/s]
+average test of epoch 15: loss 0.54492 acc 0.71093 auc 0.76414
+loss: 0.52807 acc: 0.80000: 100%|████████████| 82/82 [00:00<00:00, 86.50batch/s]
+average training of epoch 16: loss 0.41101 acc 0.81415 auc 0.87534
+loss: 0.27730 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 131.21batch/s]
+average test of epoch 16: loss 0.55203 acc 0.71614 auc 0.76490
+loss: 0.37272 acc: 0.80000: 100%|████████████| 82/82 [00:00<00:00, 90.05batch/s]
+average training of epoch 17: loss 0.41245 acc 0.81244 auc 0.87581
+loss: 0.26781 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 132.65batch/s]
+average test of epoch 17: loss 0.55576 acc 0.71855 auc 0.76509
+loss: 0.36402 acc: 0.84000: 100%|████████████| 82/82 [00:00<00:00, 90.13batch/s]
+average training of epoch 18: loss 0.40945 acc 0.81390 auc 0.87861
+loss: 0.29016 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 135.77batch/s]
+average test of epoch 18: loss 0.55002 acc 0.71321 auc 0.76491
+loss: 0.27766 acc: 0.90000: 100%|████████████| 82/82 [00:00<00:00, 88.43batch/s]
+average training of epoch 19: loss 0.40626 acc 0.81341 auc 0.88175
+loss: 0.29270 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 136.03batch/s]
+average test of epoch 19: loss 0.55447 acc 0.71118 auc 0.76490
+loss: 0.43626 acc: 0.80000: 100%|████████████| 82/82 [00:00<00:00, 89.76batch/s]
+average training of epoch 20: loss 0.40679 acc 0.81439 auc 0.87927
+loss: 0.29006 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 134.13batch/s]
+average test of epoch 20: loss 0.55620 acc 0.71131 auc 0.76528
+loss: 0.44147 acc: 0.82000: 100%|████████████| 82/82 [00:00<00:00, 90.72batch/s]
+average training of epoch 21: loss 0.40771 acc 0.81780 auc 0.87723
+loss: 0.29011 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 136.09batch/s]
+average test of epoch 21: loss 0.55252 acc 0.71131 auc 0.76624
+loss: 0.37020 acc: 0.80000: 100%|████████████| 82/82 [00:00<00:00, 91.84batch/s]
+average training of epoch 22: loss 0.40594 acc 0.81317 auc 0.88081
+loss: 0.28315 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 134.72batch/s]
+average test of epoch 22: loss 0.55594 acc 0.71093 auc 0.76673
+loss: 0.38366 acc: 0.84000: 100%|████████████| 82/82 [00:00<00:00, 90.43batch/s]
+average training of epoch 23: loss 0.40637 acc 0.81341 auc 0.87976
+loss: 0.28366 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 136.45batch/s]
+average test of epoch 23: loss 0.55734 acc 0.71004 auc 0.76737
+loss: 0.44502 acc: 0.76000: 100%|████████████| 82/82 [00:00<00:00, 90.85batch/s]
+average training of epoch 24: loss 0.40193 acc 0.81415 auc 0.88313
+loss: 0.31735 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 136.71batch/s]
+average test of epoch 24: loss 0.55681 acc 0.70597 auc 0.76735
+loss: 0.40393 acc: 0.84000: 100%|████████████| 82/82 [00:00<00:00, 90.43batch/s]
+average training of epoch 25: loss 0.40310 acc 0.81829 auc 0.88207
+loss: 0.29404 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 135.76batch/s]
+average test of epoch 25: loss 0.55706 acc 0.70724 auc 0.76779
+loss: 0.42720 acc: 0.88000: 100%|████████████| 82/82 [00:00<00:00, 90.17batch/s]
+average training of epoch 26: loss 0.40382 acc 0.82195 auc 0.88255
+loss: 0.29135 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 134.63batch/s]
+average test of epoch 26: loss 0.56198 acc 0.70801 auc 0.76792
+loss: 0.44469 acc: 0.76000: 100%|████████████| 82/82 [00:00<00:00, 91.19batch/s]
+average training of epoch 27: loss 0.40307 acc 0.81854 auc 0.88259
+loss: 0.30713 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 135.05batch/s]
+average test of epoch 27: loss 0.55931 acc 0.70546 auc 0.76813
+loss: 0.27302 acc: 0.86000: 100%|████████████| 82/82 [00:00<00:00, 91.83batch/s]
+average training of epoch 28: loss 0.39938 acc 0.81829 auc 0.88563
+loss: 0.29638 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 136.56batch/s]
+average test of epoch 28: loss 0.56285 acc 0.70750 auc 0.76836
+loss: 0.52427 acc: 0.74000: 100%|████████████| 82/82 [00:00<00:00, 92.09batch/s]
+average training of epoch 29: loss 0.40468 acc 0.81878 auc 0.88112
+loss: 0.32555 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 136.50batch/s]
+average test of epoch 29: loss 0.55736 acc 0.70407 auc 0.76902
+loss: 0.23250 acc: 0.92000: 100%|████████████| 82/82 [00:00<00:00, 90.01batch/s]
+average training of epoch 30: loss 0.40153 acc 0.81732 auc 0.88242
+loss: 0.30182 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 134.94batch/s]
+average test of epoch 30: loss 0.56370 acc 0.70508 auc 0.76902
+loss: 0.40322 acc: 0.82000: 100%|████████████| 82/82 [00:00<00:00, 88.88batch/s]
+average training of epoch 31: loss 0.39922 acc 0.81976 auc 0.88540
+loss: 0.29615 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 135.44batch/s]
+average test of epoch 31: loss 0.56544 acc 0.70457 auc 0.76941
+loss: 0.39535 acc: 0.82000: 100%|████████████| 82/82 [00:00<00:00, 90.84batch/s]
+average training of epoch 32: loss 0.39849 acc 0.82293 auc 0.88550
+loss: 0.28668 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 135.79batch/s]
+average test of epoch 32: loss 0.56618 acc 0.70737 auc 0.76957
+loss: 0.35628 acc: 0.82000: 100%|████████████| 82/82 [00:00<00:00, 87.16batch/s]
+average training of epoch 33: loss 0.39612 acc 0.82341 auc 0.88719
+loss: 0.28853 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 134.43batch/s]
+average test of epoch 33: loss 0.56776 acc 0.70610 auc 0.76998
+loss: 0.45566 acc: 0.82000: 100%|████████████| 82/82 [00:00<00:00, 91.50batch/s]
+average training of epoch 34: loss 0.39916 acc 0.82024 auc 0.88537
+loss: 0.28648 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 134.42batch/s]
+average test of epoch 34: loss 0.56983 acc 0.70407 auc 0.77006
+loss: 0.42004 acc: 0.80000: 100%|████████████| 82/82 [00:00<00:00, 89.25batch/s]
+average training of epoch 35: loss 0.39770 acc 0.82244 auc 0.88435
+loss: 0.28982 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 133.98batch/s]
+average test of epoch 35: loss 0.57064 acc 0.70432 auc 0.77058
+loss: 0.34861 acc: 0.84000: 100%|████████████| 82/82 [00:00<00:00, 90.98batch/s]
+average training of epoch 36: loss 0.39993 acc 0.82098 auc 0.88210
+loss: 0.29679 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 136.38batch/s]
+average test of epoch 36: loss 0.56744 acc 0.70343 auc 0.77109
+loss: 0.39503 acc: 0.80000: 100%|████████████| 82/82 [00:00<00:00, 88.78batch/s]
+average training of epoch 37: loss 0.40192 acc 0.81585 auc 0.88084
+loss: 0.28980 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 126.59batch/s]
+average test of epoch 37: loss 0.56650 acc 0.70394 auc 0.77147
+loss: 0.32875 acc: 0.86000: 100%|████████████| 82/82 [00:00<00:00, 86.16batch/s]
+average training of epoch 38: loss 0.39972 acc 0.82171 auc 0.88382
+loss: 0.30317 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 134.59batch/s]
+average test of epoch 38: loss 0.57103 acc 0.70178 auc 0.77143
+loss: 0.42325 acc: 0.78000: 100%|████████████| 82/82 [00:00<00:00, 90.46batch/s]
+average training of epoch 39: loss 0.39758 acc 0.82049 auc 0.88495
+loss: 0.27977 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 135.18batch/s]
+average test of epoch 39: loss 0.57033 acc 0.70381 auc 0.77121
+loss: 0.42258 acc: 0.76000: 100%|████████████| 82/82 [00:00<00:00, 90.38batch/s]
+average training of epoch 40: loss 0.39421 acc 0.81927 auc 0.88858
+loss: 0.27712 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 134.90batch/s]
+average test of epoch 40: loss 0.57590 acc 0.70254 auc 0.77185
+loss: 0.44547 acc: 0.80000: 100%|████████████| 82/82 [00:00<00:00, 88.03batch/s]
+average training of epoch 41: loss 0.39761 acc 0.81951 auc 0.88590
+loss: 0.28550 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 134.76batch/s]
+average test of epoch 41: loss 0.56782 acc 0.70216 auc 0.77265
+loss: 0.40391 acc: 0.82000: 100%|████████████| 82/82 [00:00<00:00, 88.69batch/s]
+average training of epoch 42: loss 0.39585 acc 0.82317 auc 0.88524
+loss: 0.28327 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 135.30batch/s]
+average test of epoch 42: loss 0.56880 acc 0.70241 auc 0.77286
+loss: 0.42151 acc: 0.80000: 100%|████████████| 82/82 [00:00<00:00, 90.31batch/s]
+average training of epoch 43: loss 0.39845 acc 0.82341 auc 0.88406
+loss: 0.25252 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 135.84batch/s]
+average test of epoch 43: loss 0.57689 acc 0.70610 auc 0.77252
+loss: 0.30205 acc: 0.86000: 100%|████████████| 82/82 [00:00<00:00, 91.97batch/s]
+average training of epoch 44: loss 0.39593 acc 0.82073 auc 0.88766
+loss: 0.28214 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 134.16batch/s]
+average test of epoch 44: loss 0.56869 acc 0.70216 auc 0.77405
+loss: 0.38094 acc: 0.76000: 100%|████████████| 82/82 [00:00<00:00, 90.48batch/s]
+average training of epoch 45: loss 0.39693 acc 0.82122 auc 0.88731
+loss: 0.26245 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 131.42batch/s]
+average test of epoch 45: loss 0.57988 acc 0.70216 auc 0.77352
+loss: 0.51444 acc: 0.76000: 100%|████████████| 82/82 [00:00<00:00, 90.15batch/s]
+average training of epoch 46: loss 0.39411 acc 0.82293 auc 0.88763
+loss: 0.24704 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 134.40batch/s]
+average test of epoch 46: loss 0.57718 acc 0.70483 auc 0.77474
+loss: 0.41957 acc: 0.82000: 100%|████████████| 82/82 [00:00<00:00, 90.67batch/s]
+average training of epoch 47: loss 0.39297 acc 0.82439 auc 0.88937
+loss: 0.27213 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 133.61batch/s]
+average test of epoch 47: loss 0.57892 acc 0.70140 auc 0.77484
+loss: 0.34291 acc: 0.86000: 100%|████████████| 82/82 [00:00<00:00, 91.97batch/s]
+average training of epoch 48: loss 0.39303 acc 0.82000 auc 0.88936
+loss: 0.25835 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 134.08batch/s]
+average test of epoch 48: loss 0.57528 acc 0.70280 auc 0.77607
+loss: 0.25741 acc: 0.88000: 100%|████████████| 82/82 [00:00<00:00, 90.09batch/s]
+average training of epoch 49: loss 0.39359 acc 0.82244 auc 0.88927
+loss: 0.23813 acc: 0.95000: 100%|█████████| 158/158 [00:01<00:00, 134.63batch/s]
+average test of epoch 49: loss 0.58468 acc 0.70381 auc 0.77618
+Both agents right: 5797
+Both agents wrong: 1610
+Corrected by Ensembl: 1148
+Not corrected by Ensembl: 463
+Ensemble:Accuracy tp fn tn fp AUC
+0.7365946632782719	2168	1767	3629	306	0.7705181563817369
+
+Agent0:Accuracy tp fn tn fp AUC
+0.6823379923761118	1895	2040	3475	460	0.26764526477753975
+
+Agent1:Accuracy tp fn tn fp AUC
+0.7038119440914866	2149	1786	3390	545	0.22382321362548013
