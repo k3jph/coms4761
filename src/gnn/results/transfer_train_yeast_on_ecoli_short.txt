@@ -1,0 +1,14 @@
+Train yeast on e.coli
+
+Both agents right: 3349
+Both agents wrong: 389
+Corrected by Ensembl: 814
+Not corrected by Ensembl: 372
+Ensemble:Accuracy tp fn tn fp AUC
+0.8148418491484185	1679	376	1670	385	0.8998973484646668
+
+Agent0:Accuracy tp fn tn fp AUC
+0.6912408759124088	1463	592	1378	677	0.23681934158571166
+
+Agent1:Accuracy tp fn tn fp AUC
+0.8309002433090025	1608	447	1807	248	0.11341656750788832
